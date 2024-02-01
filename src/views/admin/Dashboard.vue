@@ -38,7 +38,6 @@ export default {
   name: "Dashboard",
   data() {
     return {
-      items: this.$store.state.articles,
       columns: [
         { key: "id", sortable: true },
         { key: "title", sortable: true },
@@ -51,6 +50,14 @@ export default {
       selectedItems: [],
       user: this.$store.getters.getUser
     };
+  },
+  mounted() {
+    !this.$store.state.articles.length && this.$store.dispatch('getArticles');
+  },
+  computed: {
+    items() {
+      return this.$store.state.articles;
+    }
   },
   methods: {
     addArticle() {

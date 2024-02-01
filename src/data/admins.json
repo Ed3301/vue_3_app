@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "super": false,
+    "pwd": 54321,
+    "email": "gfrediani1@senate.gov",
+    "token": "63da5cc1-8506-4e92-847f-afd39776dea5"
+  },
+  {
+    "id": 2,
+    "name": "Super user",
+    "super": true,
+    "pwd": 12345,
+    "email": "jpenddreth0@census.gov",
+    "token": "63da5cc1-8506-4e92-847f-afd39776dea5"
+  }
+]

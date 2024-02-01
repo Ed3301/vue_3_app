@@ -33,13 +33,17 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useStore } from 'vuex';
 
 const router = useRouter();
 const store = useStore();
 const email = ref('');
 const password = ref('');
+
+onMounted(() => {
+  !store.state.admins.length && store.dispatch('getAdmins');
+});
 
 const login = () => {
   const user = store.state.admins.find((obj) => obj.email == email.value);

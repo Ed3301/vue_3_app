@@ -35,6 +35,9 @@ export default {
       }
     }
   },
+  async mounted() {
+    this.$store.dispatch('getAuthors');
+  },
   methods: {
     generateId() {
       const articles = [...this.$store.state.articles];
